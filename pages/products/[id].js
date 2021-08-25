@@ -38,7 +38,7 @@ const Product = props => (
           initial={{ opacity: 0 }}>
           <motion.img
             key={props.product.image}
-            src={props.product.image}
+            src={props.product.id === 'ghost-whey-x-chips-ahoy' ? 'https://cdn.shopify.com/s/files/1/2060/6331/products/WheyCA.png?v=1596573521' : props.product.image}
             animate={{ x: 0, opacity: 1 }}
             initial={{ x: 200, opacity: 0 }}
             exit={{ opacity: 0 }}

@@ -60,12 +60,12 @@ const Index = props => (
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
                 key={product.image}
-                src={product.image}
+                src={product.id === 'ghost-whey-x-chips-ahoy' ? 'https://cdn.shopify.com/s/files/1/2060/6331/products/WheyCA.png?v=1596573521' : product.image}
                 width={250}
               />
               <div className='product-info'>
-                <h4>{product.name}</h4>
-                <span>{product.price}</span>
+                <h2 className='product-info__title'>{product.name}</h2>
+                <span className='product-info__price'>{product.price}</span>
               </div>
             </motion.div>
           </Link>
@@ -80,6 +80,7 @@ Index.getInitialProps = async function() {
     "https://my-json-server.typicode.com/wrongakram/demo/products"
   );
   const data = await res.json();
+  console.log('data:', data)
   return {
     products: data
   };
